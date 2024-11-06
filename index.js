@@ -9,20 +9,22 @@ function gerarPDF() {
         jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
     };
 
-    html2pdf().set(options).from(element).toPdf().output('blob').then((pdfBlob) => {
+    html2pdf().set(options).from(element).save();    
+
+    // html2pdf().set(options).from(element).toPdf().output('blob').then((pdfBlob) => {
     
-        if (navigator.canShare && navigator.canShare({ files: [pdfBlob] })) {
-            const file = new File([pdfBlob], 'documento.pdf', { type: 'application/pdf' });
-            navigator.share({
-                title: 'Compartilhar PDF',
-                files: [file]
-            }).then(() => {
-                console.log('PDF compartilhado com sucesso!');
-            }).catch((error) => {
-                console.error('Erro ao compartilhar:', error);
-            });
-        } else {
-            console.log('O compartilhamento de arquivos não é suportado neste dispositivo.');
-        }
-    });    
+    //     if (navigator.canShare && navigator.canShare({ files: [pdfBlob] })) {
+    //         const file = new File([pdfBlob], 'documento.pdf', { type: 'application/pdf' });
+    //         navigator.share({
+    //             title: 'Compartilhar PDF',
+    //             files: [file]
+    //         }).then(() => {
+    //             console.log('PDF compartilhado com sucesso!');
+    //         }).catch((error) => {
+    //             console.error('Erro ao compartilhar:', error);
+    //         });
+    //     } else {
+    //         console.log('O compartilhamento de arquivos não é suportado neste dispositivo.');
+    //     }
+    // });    
 }
