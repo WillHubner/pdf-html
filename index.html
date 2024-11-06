@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Nota Vestibular</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>                  
+</head>
+<body class="bg-light" id="content">
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+        
+        <!-- Logo Superior -->
+        <div class="my-4">
+            <img src="./img/concurso.png" alt="Logo Superior" class="img-fluid" style="max-width: 200px;">
+        </div>
+        
+        <!-- Card de Login -->
+        <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+            <h4 class="card-title text-center mb-3">Gerar PDF</h4>
+            <div>
+                            
+                <!-- Botão de Consulta -->
+                <div class="d-grid mb-2">
+                    <button id="btnConsultar" onclick="gerarPDF()" class="btn btn-success">Gerar PDF</button>
+                </div>
+            </div>
+            <!-- Botão de Dúvidas -->
+            <div class="text-center mt-3">
+                <a href="contato.html" class="btn btn-link text-decoration-none">Dúvidas? Entre em contato conosco!</a>
+            </div>
+        </div>
+        
+        <div id="resultado"></div>
+
+        <!-- Logo Inferior -->
+        <div class="my-4">
+            <img src="./img/logo.png" alt="Logo Inferior" class="img-fluid" style="max-width: 150px;">
+        </div>
+        
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
